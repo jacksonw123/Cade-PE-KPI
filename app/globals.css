@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 92%; /* Cream/beige background like Cade Partners */
+    --foreground: 20 14% 15%; /* Dark charcoal text */
+    --card: 40 25% 95%; /* Slightly lighter cream for cards */
+    --card-foreground: 20 14% 15%;
+    --popover: 40 25% 95%;
+    --popover-foreground: 20 14% 15%;
+    --primary: 20 14% 15%; /* Dark charcoal for primary elements */
+    --primary-foreground: 40 20% 92%;
+    --secondary: 35 15% 85%; /* Muted beige for secondary elements */
+    --secondary-foreground: 20 14% 15%;
+    --muted: 35 15% 88%; /* Light muted beige */
+    --muted-foreground: 20 8% 45%; /* Medium gray for muted text */
+    --accent: 35 15% 85%;
+    --accent-foreground: 20 14% 15%;
+    --destructive: 0 65% 55%; /* Muted red for warnings */
+    --destructive-foreground: 40 20% 92%;
+    --border: 35 15% 82%; /* Subtle border color */
+    --input: 35 15% 82%;
+    --ring: 20 14% 15%;
+    --chart-1: 25 65% 45%; /* Warm brown for charts */
+    --chart-2: 35 45% 55%; /* Muted gold */
+    --chart-3: 15 25% 35%; /* Dark brown */
+    --chart-4: 45 35% 65%; /* Light brown */
+    --chart-5: 30 55% 50%; /* Medium brown */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14% 15%;
+    --foreground: 40 20% 92%;
+    --card: 20 14% 18%;
+    --card-foreground: 40 20% 92%;
+    --popover: 20 14% 18%;
+    --popover-foreground: 40 20% 92%;
+    --primary: 40 20% 92%;
+    --primary-foreground: 20 14% 15%;
+    --secondary: 20 10% 25%;
+    --secondary-foreground: 40 20% 92%;
+    --muted: 20 10% 25%;
+    --muted-foreground: 40 10% 65%;
+    --accent: 20 10% 25%;
+    --accent-foreground: 40 20% 92%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 40 20% 92%;
+    --border: 20 10% 25%;
+    --input: 20 10% 25%;
+    --ring: 40 20% 92%;
+    --chart-1: 25 65% 55%;
+    --chart-2: 35 45% 65%;
+    --chart-3: 15 25% 45%;
+    --chart-4: 45 35% 75%;
+    --chart-5: 30 55% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles for Cade Partners aesthetic */
+.cade-header {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.cade-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+}
+
+.cade-card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+}
+
+.cade-metric-positive {
+  color: hsl(25 65% 45%);
+}
+
+.cade-metric-negative {
+  color: hsl(0 65% 55%);
+}
+
+.cade-button-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: 1px solid hsl(var(--primary));
+}
+
+.cade-button-primary:hover {
+  background: hsl(20 14% 25%);
+}
+
+.cade-button-secondary {
+  background: transparent;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.cade-button-secondary:hover {
+  background: hsl(var(--muted));
+}
